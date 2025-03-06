@@ -1,0 +1,3682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DHRUV.AI - Agricultural Drone Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1, h2, h3, .nav-logo span {
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        :root {
+            --primary: #006B5E;
+            --primary-light: #00A896;
+            --primary-dark: #004a41;
+            --accent: #FFD700;
+            --text-dark: #2C3E50;
+            --text-light: #607D8B;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --section-bg-1: #f0f7f6; /* Light mint */
+            --section-bg-2: #ffffff; /* White */
+            --section-bg-3: #e8f3f1; /* Lighter mint */
+            --gradient-1: linear-gradient(135deg, #006B5E, #004a41);
+            --gradient-2: linear-gradient(45deg, #00A896, #006B5E);
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+            --shadow-strong: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .navbar {
+            background-color: #006B5E;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo img {
+            height: 45px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-text .dhruv {
+            color: #2e2c2c;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo-text .ai {
+            color: rgb(69, 133, 69);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-logo span {
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--gradient-2);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: white;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .nav-contact {
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border-radius: 25px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .nav-contact:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .hero-section {
+            min-height: 90vh;
+            background: var(--section-bg-2);
+            padding: 120px 0 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--text-dark);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0 40px;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-description {
+                margin: 0 auto 2rem;
+            }
+
+            .main-image {
+                max-width: 80%;
+            }
+
+            .logo-text .dhruv,
+            .logo-text .ai {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .logo-text .dhruv,
+            .logo-text .ai {
+                font-size: 1.6rem;
+            }
+        }
+
+        .intro-section {
+            padding: 6rem 5%;
+            background: var(--gradient-1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .vision-content h2 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .vision-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .vision-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .vision-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-card h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .vision-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .vision-description {
+            max-width: 800px;
+            margin: 4rem auto 0;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .vision-description p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .vision-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -150px;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            right: -100px;
+        }
+
+        @media (max-width: 992px) {
+            .vision-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .vision-content h2 {
+                font-size: 2.8rem;
+            }
+
+            .vision-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .vision-content h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        .mission-section {
+            padding: 5rem 5%;
+            background: var(--section-bg-3);
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .process-container h2 {
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .workflow-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .workflow-item {
+            flex: 0 1 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        .workflow-icon {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .workflow-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .workflow-item:hover .workflow-icon img {
+            transform: scale(1.1);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            background: var(--gradient-2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .workflow-item h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .workflow-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media (max-width: 992px) {
+            .workflow-container {
+                gap: 1.5rem;
+            }
+
+            .workflow-item {
+                flex: 0 1 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .workflow-container {
+                gap: 2rem;
+            }
+
+            .workflow-item {
+                flex: 0 1 160px;
+            }
+
+            .workflow-icon {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .workflow-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            .workflow-item {
+                flex: 0 1 auto;
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        .components-section {
+            padding: 5rem 5%;
+            background: var(--section-bg-1);
+            position: relative;
+        }
+
+        .components-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(0,168,150,0.05), transparent 60%),
+                        radial-gradient(circle at bottom left, rgba(0,107,94,0.05), transparent 60%);
+            pointer-events: none;
+        }
+
+        .components-section h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .components-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .component-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .component-card h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .specs-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .specs-list li {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .specs-list li::before {
+            content: '•';
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .component-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .component-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Add a subtle overlay pattern */
+        .component-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        @media (min-width: 1400px) {
+            .components-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2.5rem;
+            }
+
+            .component-card img {
+                height: 220px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .components-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+
+            .component-card {
+                padding: 1.8rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .components-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.8rem;
+            }
+
+            .component-card img {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .components-section {
+                padding: 4rem 4%;
+            }
+
+            .components-grid {
+                gap: 1.5rem;
+            }
+
+            .component-card {
+                padding: 1.5rem;
+            }
+
+            .component-card h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .specs-list li {
+                font-size: 0.9rem;
+                padding: 0.6rem 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .components-section {
+                padding: 3rem 3%;
+            }
+
+            .components-grid {
+                grid-template-columns: 1fr;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .component-card {
+                padding: 1.2rem;
+            }
+
+            .component-card img {
+                height: 160px;
+            }
+        }
+
+        @media (hover: none) {
+            .component-card {
+                transform: none !important;
+            }
+
+            .component-card:active {
+                transform: scale(0.98) !important;
+            }
+
+            .component-card img {
+                transform: none !important;
+            }
+        }
+
+        .component-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .component-card:nth-child(1) { animation-delay: 0.1s; }
+        .component-card:nth-child(2) { animation-delay: 0.2s; }
+        .component-card:nth-child(3) { animation-delay: 0.3s; }
+        .component-card:nth-child(4) { animation-delay: 0.4s; }
+        .component-card:nth-child(5) { animation-delay: 0.5s; }
+        .component-card:nth-child(6) { animation-delay: 0.6s; }
+        .component-card:nth-child(7) { animation-delay: 0.7s; }
+        .component-card:nth-child(8) { animation-delay: 0.8s; }
+
+        .team-section {
+            padding: 5rem 5%;
+            background: var(--section-bg-2);
+            position: relative;
+            overflow: hidden;
+            contain: content; /* Improves rendering performance */
+            content-visibility: auto; /* Defers off-screen content rendering */
+            contain-intrinsic-size: 700px; /* Prevents layout shifts */
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #00A896 0%, #006B5E 100%);
+            border-radius: 0 0 0 100%;
+            opacity: 0.1;
+        }
+
+        .team-section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #B5FF7D 0%, #00A896 100%);
+            border-radius: 0 100% 0 0;
+            opacity: 0.1;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            contain: layout style; /* Optimizes layout calculations */
+        }
+
+        .team-card {
+            position: relative;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            will-change: transform; /* Optimizes animations */
+            transform: translateZ(0); /* Forces GPU acceleration */
+            backface-visibility: hidden; /* Reduces paint complexity */
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .member-image {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            background: #f0f0f0; /* Placeholder color */
+        }
+
+        .member-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s linear infinite;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .member-image.loaded::before {
+            display: none;
+        }
+
+        .member-image.loaded img {
+            opacity: 1;
+        }
+
+        /* Fallback for missing images */
+        .member-image img:not([src]), 
+        .member-image img[src=""],
+        .member-image img[src="#"] {
+            visibility: hidden;
+        }
+
+        .member-image img:not([src]) + .fallback-initials,
+        .member-image img[src=""] + .fallback-initials,
+        .member-image img[src="#"] + .fallback-initials {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            z-index: 1;
+        }
+
+        .team-card h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .member-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .linkedin-link {
+            display: inline-block;
+            color: #0077b5;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .linkedin-link:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .member-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .member-desc {
+                padding: 0;
+            }
+        }
+
+        .footer {
+            background: var(--gradient-1);
+            color: white;
+            padding: 3rem 5% 1.5rem;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 0 0 0 100%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .footer-logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            padding: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-logo-section h3 {
+            font-size: 2.2rem;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            background: linear-gradient(45deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-info-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .contact-info-footer .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-info-footer .info-item:hover {
+            background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.08));
+            border: 1px solid rgba(255,255,255,0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-info-footer .info-item i {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.3rem;
+            width: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info-footer .info-item:hover i {
+            transform: scale(1.1);
+        }
+
+        .contact-info-footer .info-item p {
+            margin: 0;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 2.5rem 5% 1rem;
+            }
+
+            .footer-content {
+                text-align: center;
+            }
+
+            .footer-logo-section {
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+
+            .contact-info-footer .info-item {
+                justify-content: center;
+            }
+
+            .contact-info-footer .info-item:hover {
+                transform: translateX(0) translateY(-3px);
+            }
+        }
+
+        /* Global Responsive Styles */
+        @media (max-width: 1200px) {
+            .components-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .components-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 3.2rem;
+            }
+
+            h2 {
+                font-size: 2.4rem;
+            }
+
+            .workflow-container {
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 4%;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                padding: 6rem 4% 3rem;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .hero-content, .hero-image {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin-bottom: 3rem;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .intro-section, 
+            .mission-section,
+            .components-section,
+            .team-section {
+                padding: 4rem 4%;
+            }
+
+            .workflow-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .workflow-item {
+                width: 100%;
+            }
+
+            .components-grid,
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                padding: 0 4%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 0.8rem 3%;
+            }
+
+            .nav-logo img {
+                height: 40px;
+            }
+
+            .logo-text .dhruv,
+            .logo-text .ai {
+                font-size: 1.4rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .hero-section {
+                padding: 5rem 3% 2rem;
+            }
+
+            .intro-section, 
+            .mission-section,
+            .components-section,
+            .team-section {
+                padding: 3rem 3%;
+            }
+
+            .workflow-container {
+                grid-template-columns: 1fr;
+            }
+
+            .components-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .component-card,
+            .team-card {
+                padding: 1rem;
+            }
+
+            .member-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .footer {
+                padding: 2rem 3% 1rem;
+            }
+
+            .footer-logo-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .footer-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .contact-info-footer .info-item {
+                padding: 0.6rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Fix for iOS Safari 100vh issue */
+        @supports (-webkit-touch-callout: none) {
+            .hero-section {
+                height: -webkit-fill-available;
+            }
+        }
+
+        /* Print Media Query */
+        @media print {
+            .navbar {
+                position: static;
+                box-shadow: none;
+            }
+
+            .hero-section {
+                height: auto;
+                margin-top: 0;
+            }
+
+            .footer {
+                background: none;
+                color: black;
+            }
+
+            .contact-info-footer .info-item {
+                background: none;
+                color: black;
+            }
+        }
+
+        /* Enhanced Responsive Styles */
+        
+        /* Extra Large Screens */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1320px;
+                margin: 0 auto;
+            }
+
+            .hero-section {
+                padding: 0 8%;
+            }
+
+            .hero-content {
+                padding-right: 5%;
+            }
+
+            h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        /* Large Screens */
+        @media (max-width: 1200px) {
+            .hero-section {
+                padding: 0 4%;
+            }
+
+            .components-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.2rem;
+            }
+
+            .component-card {
+                padding: 1.2rem;
+            }
+
+            .team-grid {
+                gap: 1.5rem;
+            }
+        }
+
+        /* Medium Screens */
+        @media (max-width: 992px) {
+            .hero-content {
+                padding-right: 2rem;
+            }
+
+            .hero-image img {
+                max-width: 90%;
+            }
+
+            .components-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .workflow-container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+
+            .workflow-item {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        /* Small Screens */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0.8rem 4%;
+            }
+
+            .hero-section {
+                margin-top: 60px;
+                padding: 2rem 4%;
+                min-height: calc(100vh - 60px);
+            }
+
+            .hero-content, .hero-image {
+                width: 100%;
+                padding: 0;
+            }
+
+            .workflow-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .components-grid,
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .component-card h3 {
+                font-size: 1.2rem;
+                min-height: auto;
+            }
+
+            .member-image {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        /* Extra Small Screens */
+        @media (max-width: 576px) {
+            .navbar {
+                padding: 0.6rem 3%;
+            }
+
+            .nav-logo img {
+                height: 35px;
+            }
+
+            .hero-section {
+                padding: 1.5rem 3%;
+            }
+
+            h1 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .workflow-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .components-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .component-card {
+                margin: 0 auto;
+                max-width: 350px;
+            }
+
+            .team-card {
+                margin: 0 auto;
+                max-width: 280px;
+            }
+        }
+
+        /* Landscape Mode */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero-section {
+                min-height: auto;
+                padding: 5rem 4% 2rem;
+            }
+
+            .hero-content {
+                margin-bottom: 2rem;
+            }
+
+            .member-image {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) {
+            .nav-links a,
+            .component-card,
+            .team-card,
+            .contact-info-footer .info-item {
+                transition: none;
+            }
+
+            .component-card:active,
+            .team-card:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Medium Screen Navbar Styles (765px - 998px) */
+        @media (min-width: 765px) and (max-width: 998px) {
+            .navbar {
+                padding: 1rem 3%;
+            }
+
+            .nav-logo {
+                gap: 0.8rem;
+            }
+
+            .nav-logo img {
+                height: 45px;
+            }
+
+            .nav-logo span {
+                font-size: 1.6rem;
+            }
+
+            .nav-links {
+                gap: 1.2rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 0.5rem;
+            }
+
+            /* Adjust hero section for navbar height */
+            .hero-section {
+                margin-top: 65px;
+            }
+        }
+
+        /* Enhance existing mobile menu styles */
+        @media (max-width: 765px) {
+            .navbar {
+                padding: 0.8rem 3%;
+            }
+
+            .nav-links {
+                top: 65px;
+                padding: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                font-size: 1rem;
+            }
+
+            .nav-links .nav-contact {
+                margin: 1rem;
+                text-align: center;
+            }
+
+            .menu-btn {
+                padding: 0.5rem;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+            .menu-btn:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        /* Additional responsive adjustments */
+        @media (min-width: 765px) {
+            .nav-links {
+                display: flex !important; /* Ensure links are visible on desktop */
+            }
+
+            .menu-btn {
+                display: none !important; /* Hide menu button on desktop */
+            }
+        }
+
+        .video-section {
+            padding: 5rem 5%;
+            background: var(--section-bg-2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-container h2 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .video-wrapper:hover video {
+            transform: scale(1.02);
+        }
+
+        /* Video controls styling */
+        video::-webkit-media-controls {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+        }
+
+        video::-webkit-media-controls-panel {
+            padding: 0 10px;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .video-container h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-section {
+                padding: 4rem 5%;
+            }
+
+            .video-container h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .video-wrapper {
+                border-radius: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .video-section {
+                padding: 3rem 5%;
+            }
+
+            .video-container h2 {
+                font-size: 1.8rem;
+            }
+
+            .video-wrapper {
+                border-radius: 10px;
+            }
+        }
+
+        .features-section {
+            padding: 5rem 5%;
+            background: var(--section-bg-1);
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-container h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0, 107, 94, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 107, 94, 0.1);
+            background: linear-gradient(to bottom right, white, var(--section-bg-1));
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover i {
+            transform: scale(1.1);
+        }
+
+        .feature-card h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-section {
+                padding: 4rem 5%;
+            }
+
+            .features-container h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
+            .features-container h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Add wave separators between sections */
+        .section-wave {
+            position: relative;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        .section-wave::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23006B5E' fill-opacity='0.05' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+            background-size: 1440px 70px;
+        }
+
+        /* Add subtle section transitions */
+        .features-section::before,
+        .mission-section::before,
+        .components-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--gradient-2);
+            opacity: 0.1;
+        }
+
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+
+        .skill-tag {
+            background: rgba(0, 107, 94, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .team-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .member-desc {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+
+        .role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        .social-link .fa-linkedin {
+            background: #0077b5;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        .social-link .fa-github {
+            background: #333;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+        /* Update Priyanka's role since Roshni now handles deep learning */
+        .team-card:nth-child(3) .role {
+            content: "AI Model Developer";
+        }
+        
+        .team-card:nth-child(3) .member-desc {
+            content: "Specializes in AI model optimization and agricultural data analysis.";
+        }
+
+        .social-link.email-link {
+            background: linear-gradient(135deg, #EA4335 0%, #DB4437 100%);
+            box-shadow: 0 4px 10px rgba(234, 67, 53, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link.email-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+            transition: transform 0.3s ease;
+        }
+
+        .social-link.email-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(234, 67, 53, 0.4);
+        }
+
+        .social-link.email-link:hover::before {
+            transform: translateX(100%);
+        }
+
+        .social-link.email-link .fa-envelope {
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+        }
+
+        .social-link .fa-envelope {
+            background: none;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        /* Mobile Navigation Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(0, 107, 94, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                transition: 0.3s ease-in-out;
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-btn {
+                display: block;
+                color: white;
+            }
+
+            .nav-item {
+                font-size: 1.2rem;
+                padding: 1rem 0;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-contact {
+                margin-top: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Team Section Mobile Styles */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .team-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .member-skills {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .skill-tag {
+                margin: 0.25rem;
+            }
+
+            .social-links {
+                gap: 1.5rem;
+            }
+        }
+
+        /* Components Section Mobile Styles */
+        @media (max-width: 768px) {
+            .components-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 0 1rem;
+            }
+
+            .component-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .specs-list li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* General Mobile Improvements */
+        @media (max-width: 576px) {
+            section {
+                padding: 3rem 1rem !important;
+            }
+
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .member-desc, .specs-list {
+                font-size: 0.9rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+            }
+
+            /* Improve touch targets */
+            .nav-item, .social-link, .cta-button {
+                padding: 12px 20px;
+                margin: 5px 0;
+            }
+
+            /* Better spacing for mobile */
+            .section-wave {
+                height: 40px;
+            }
+
+            /* Improve form elements for mobile */
+            input, textarea, button {
+                font-size: 16px !important; /* Prevents iOS zoom on focus */
+                padding: 12px !important;
+            }
+        }
+
+        /* Add smooth scrolling for iOS */
+        @supports (-webkit-overflow-scrolling: touch) {
+            .nav-links {
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        /* Improve touch feedback */
+        @media (hover: none) {
+            .nav-item:active, .social-link:active, .cta-button:active {
+                opacity: 0.7;
+                transform: scale(0.98);
+            }
+        }
+
+        /* Add loading state for images */
+        .member-image, .component-card img {
+            position: relative;
+            background: #f0f0f0;
+        }
+
+        .member-image::before, .component-card img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Process Section Mobile Styles */
+        @media (max-width: 768px) {
+            .workflow-container {
+                padding: 0 1rem;
+            }
+
+            .workflow-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .workflow-item {
+                flex-direction: column;
+                text-align: center;
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 1.5rem;
+            }
+
+            .workflow-icon {
+                margin-right: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            .workflow-icon img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .step-number {
+                top: -10px;
+                right: -10px;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .workflow-content h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .workflow-content p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            /* Add connecting lines for mobile */
+            .workflow-item::after {
+                content: '';
+                position: absolute;
+                bottom: -1rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 2rem;
+                background: linear-gradient(to bottom, var(--primary-light), transparent);
+                display: block;
+            }
+
+            .workflow-item:last-child::after {
+                display: none;
+            }
+        }
+
+        /* Smaller mobile devices */
+        @media (max-width: 576px) {
+            .workflow-container h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .workflow-icon img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .workflow-item {
+                padding: 1rem;
+            }
+
+            .step-number {
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+
+            /* Add animation for better UX */
+            .workflow-item {
+                opacity: 0;
+                transform: translateY(20px);
+                animation: fadeInUp 0.6s ease forwards;
+            }
+
+            @keyframes fadeInUp {
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .workflow-item:nth-child(1) { animation-delay: 0.1s; }
+            .workflow-item:nth-child(2) { animation-delay: 0.2s; }
+            .workflow-item:nth-child(3) { animation-delay: 0.3s; }
+            .workflow-item:nth-child(4) { animation-delay: 0.4s; }
+            .workflow-item:nth-child(5) { animation-delay: 0.5s; }
+        }
+
+        /* Add hover effects for touch devices */
+        @media (hover: none) {
+            .workflow-item:active {
+                transform: scale(0.98);
+                transition: transform 0.2s ease;
+            }
+        }
+
+        /* Improve loading state for process images */
+        .workflow-icon {
+            position: relative;
+            background: #f0f0f0;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .workflow-icon img {
+            transition: transform 0.3s ease;
+        }
+
+        .workflow-item:hover .workflow-icon img {
+            transform: scale(1.1);
+        }
+
+        /* Optimize team section rendering */
+        .team-section {
+            contain: content; /* Improves rendering performance */
+            content-visibility: auto; /* Defers off-screen content rendering */
+            contain-intrinsic-size: 700px; /* Prevents layout shifts */
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            contain: layout style; /* Optimizes layout calculations */
+        }
+
+        .team-card {
+            position: relative;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            will-change: transform; /* Optimizes animations */
+            transform: translateZ(0); /* Forces GPU acceleration */
+            backface-visibility: hidden; /* Reduces paint complexity */
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-strong);
+        }
+
+        /* Optimize images */
+        .member-image img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            loading: lazy; /* Defers loading of off-screen images */
+            decoding: async; /* Prevents image decode from blocking rendering */
+        }
+
+        /* Progressive loading animation */
+        @keyframes cardLoad {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .team-card {
+            animation: cardLoad 0.5s ease-out backwards;
+        }
+
+        /* Stagger card animations */
+        .team-card:nth-child(1) { animation-delay: 100ms; }
+        .team-card:nth-child(2) { animation-delay: 200ms; }
+        .team-card:nth-child(3) { animation-delay: 300ms; }
+        .team-card:nth-child(4) { animation-delay: 400ms; }
+        .team-card:nth-child(5) { animation-delay: 500ms; }
+        .team-card:nth-child(6) { animation-delay: 600ms; }
+
+        /* Add placeholder for images */
+        .member-image {
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Process Section Styles */
+        .process-section {
+            padding: 5rem 5%;
+            background: var(--section-bg-2);
+            position: relative;
+        }
+
+        .process-section h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-item {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .process-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            background: white;
+            border-radius: 50%;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .process-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .process-item h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .process-section {
+                padding: 4rem 1rem;
+            }
+
+            .process-section h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .process-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 1rem;
+                padding: 1rem;
+                margin: 0 -1rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .process-grid::-webkit-scrollbar {
+                display: none;
+            }
+
+            .process-item {
+                flex: 0 0 80%;
+                scroll-snap-align: center;
+                background: white;
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: var(--shadow-soft);
+                position: relative;
+                transition: all 0.3s ease;
+            }
+
+            .process-icon {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1.5rem;
+                transform: translateY(0);
+                transition: transform 0.3s ease;
+            }
+
+            .process-item.active .process-icon {
+                transform: translateY(-5px);
+            }
+
+            .step-number {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                width: 30px;
+                height: 30px;
+                background: var(--primary);
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: bold;
+                font-size: 0.9rem;
+            }
+
+            /* Progress dots */
+            .progress-dots {
+                display: flex;
+                justify-content: center;
+                gap: 0.5rem;
+                margin-top: 2rem;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--primary);
+                opacity: 0.3;
+                transition: all 0.3s ease;
+            }
+
+            .dot.active {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+
+            /* Connecting lines */
+            .process-item::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -1.5rem;
+                width: 2rem;
+                height: 2px;
+                background: var(--primary-light);
+                opacity: 0.3;
+                transform: translateY(-50%);
+            }
+
+            .process-item:last-child::after {
+                display: none;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 576px) {
+            .process-item {
+                flex: 0 0 85%;
+                padding: 1.5rem;
+            }
+
+            .process-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .process-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .process-item p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Vision Section Base Styles */
+        .vision-section {
+            padding: 5rem 5%;
+            background: var(--primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .vision-section h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .vision-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vision-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .vision-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .vision-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .vision-description {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Media Query for specified dimensions */
+        @media screen and (min-width: 412px) and (max-width: 995px) and (min-height: 915px) and (max-height: 919px) {
+            .vision-section {
+                padding: 4rem 1.5rem;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .vision-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .vision-card {
+                padding: 2rem;
+                background: rgba(255, 255, 255, 0.15);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                transform: translateY(0);
+                opacity: 0;
+                animation: slideUp 0.5s ease forwards;
+            }
+
+            .vision-card:nth-child(1) { animation-delay: 0.2s; }
+            .vision-card:nth-child(2) { animation-delay: 0.4s; }
+            .vision-card:nth-child(3) { animation-delay: 0.6s; }
+
+            .vision-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .vision-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .vision-card p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+
+            .vision-description {
+                margin-top: 2rem;
+                padding: 1.5rem;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            @keyframes slideUp {
+                from {
+                    transform: translateY(30px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+
+        /* Additional breakpoint for better responsiveness */
+        @media screen and (max-width: 412px) {
+            .vision-section h2 {
+                font-size: 2rem;
+            }
+
+            .vision-card {
+                padding: 1.5rem;
+            }
+
+            .vision-icon {
+                font-size: 2rem;
+            }
+
+            .vision-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .vision-description {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Modern App-like Vision Section */
+        .vision-section {
+            padding: 4rem 1.5rem;
+            background: var(--primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Floating Navigation Dots */
+        .section-nav {
+            position: fixed;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+
+        /* Enhanced Header */
+        .vision-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .vision-header h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .vision-header .underline {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Card Container */
+        .vision-cards-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1rem 0;
+        }
+
+        /* Enhanced Vision Cards */
+        .vision-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(30px);
+            opacity: 0;
+            animation: slideUp 0.5s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .vision-card:active {
+            transform: scale(0.98);
+        }
+
+        .vision-card:active::before {
+            opacity: 1;
+        }
+
+        /* Icon Container */
+        .icon-container {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transform: rotate(-5deg);
+            transition: transform 0.3s ease;
+        }
+
+        .vision-card:active .icon-container {
+            transform: rotate(0) scale(0.95);
+        }
+
+        .icon-container i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* Card Content */
+        .vision-card h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .vision-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Bottom Description */
+        .vision-description {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards 1s;
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Card Delays */
+        .vision-card:nth-child(1) { animation-delay: 0.3s; }
+        .vision-card:nth-child(2) { animation-delay: 0.5s; }
+        .vision-card:nth-child(3) { animation-delay: 0.7s; }
+
+        /* Swipe Indicator */
+        .swipe-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards 1.5s;
+        }
+
+        .swipe-dot {
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .swipe-dot.active {
+            background: var(--accent);
+            transform: scale(1.2);
+        }
+
+        /* Touch Feedback */
+        @media (hover: none) {
+            .vision-card {
+                transition: transform 0.2s ease;
+            }
+
+            .vision-card:active {
+                transform: scale(0.98);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logoDhruvai.png" alt="DHRUV.AI Logo">
+                <div class="logo-text">
+                    <span class="dhruv">DHRUV</span><span class="ai">.AI</span>
+                </div>
+            </div>
+            
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#vision" class="nav-item">Vision</a>
+                <a href="#process" class="nav-item">Process</a>
+                <a href="#components" class="nav-item">Components</a>
+                <a href="#team" class="nav-item">Team</a>
+                <a href="#footer" class="nav-item">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Smart Farming with 
+                    <span class="highlight">AI Drones</span>
+                </h1>
+                <p class="hero-description">
+                    Transforming agriculture through precision technology. Our AI-powered drones help farmers monitor crops, analyze field health, and maximize yields efficiently.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="drone.jpeg" alt="Agricultural Drone" class="main-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section" id="vision">
+        <div class="vision-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="vision-container">
+            <div class="vision-content">
+                <h2>Our Vision</h2>
+                <div class="vision-grid">
+                    <div class="vision-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI-Powered Innovation</h3>
+                        <p>Leveraging cutting-edge artificial intelligence to revolutionize traditional farming practices.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-helicopter"></i>
+                        <h3>Drone Technology</h3>
+                        <p>Using advanced drone systems to monitor and analyze agricultural fields with precision.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainable Agriculture</h3>
+                        <p>Promoting sustainable farming practices through smart technology integration.</p>
+                    </div>
+                </div>
+                <div class="vision-description">
+                    <p>We embark on a journey to revolutionize farming by harnessing the power of artificial intelligence and drone technology. Our AI-enabled drones capture high-quality images of agricultural fields, analyzing plant health and detecting diseases to improve crop yield and sustainability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-container">
+            <h2>Features of Our Drone</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-camera-retro"></i>
+                    <h3>High Resolution Imaging</h3>
+                    <p>4K camera with advanced stabilization for crystal clear aerial imagery</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-battery-three-quarters"></i>
+                    <h3>Long Flight Time</h3>
+                    <p>Up to 30 minutes of flight time on a single charge</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Wind Resistant</h3>
+                    <p>Stable flight in winds up to 25mph for reliable operation</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-satellite-dish"></i>
+                    <h3>GPS Precision</h3>
+                    <p>Accurate positioning and autonomous navigation capabilities</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Smart AI Processing</h3>
+                    <p>Real-time data analysis and crop health assessment</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Fail-Safe System</h3>
+                    <p>Multiple safety features including return-to-home function</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="video-container">
+            <h2>See Our Drone in Action</h2>
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline poster="video-thumbnail.jpg">
+                    <source src="drone-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section" id="process">
+        <div class="process-container">
+            <h2>Our Process</h2>
+            <div class="workflow-container">
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="droneProcess.png" alt="Making Drone">
+                        <span class="step-number">01</span>
+                    </div>
+                    <h3>Making Drone</h3>
+                    <p>Custom-built drones designed for agricultural monitoring</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="Ai.png" alt="Making AI Model">
+                        <span class="step-number">02</span>
+                    </div>
+                    <h3>AI Model Development</h3>
+                    <p>Advanced algorithms for crop analysis</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="data-collection.png" alt="Capturing Images">
+                        <span class="step-number">03</span>
+                    </div>
+                    <h3>Data Collection</h3>
+                    <p>High-resolution aerial imagery capture</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="dataAnalasis.png" alt="Analysis">
+                        <span class="step-number">04</span>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>AI-powered crop health assessment</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="resultt.png" alt="Results">
+                        <span class="step-number">05</span>
+                    </div>
+                    <h3>Results & Insights</h3>
+                    <p>Actionable farming recommendations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="components-section" id="components">
+        <h2>Model Components</h2>
+        <div class="components-grid">
+            <!-- Flight Controller -->
+            <div class="component-card">
+                <img src="FlightController (2).png" alt="Radiolink Flight Controller">
+                <h3>Radiolink Flight Controller</h3>
+                <ul class="specs-list">
+                    <li>Processor: HC32F4A0PITB</li>
+                    <li>Input Voltage Range: 2-12S</li>
+                    <li>Input Current(A): 90</li>
+                    <li>Output Voltage(V): 5.1</li>
+                    <li>Output Current (A): 2.5</li>
+                    <li>PWM Outputs: 10</li>
+                </ul>
+            </div>
+
+            <!-- Remote Control -->
+            <div class="component-card">
+                <img src="remoteController.png" alt="FS-i6S Remote Control">
+                <h3>FS-i6S Remote Control 2.4G</h3>
+                <ul class="specs-list">
+                    <li>Operating Voltage (VDC): 4.2 - 6.0</li>
+                    <li>No. of Channels: 10</li>
+                    <li>Antenna Length (mm): 26</li>
+                    <li>Certificate: CE0678, FCC</li>
+                </ul>
+            </div>
+
+            <!-- Camera -->
+            <div class="component-card">
+                <img src="camera.png" alt="RunCam Phoenix 2">
+                <h3>RunCam Phoenix 2 Micro FPV Camera</h3>
+                <ul class="specs-list">
+                    <li>Image Sensor: 1/2" COMS Sensor</li>
+                    <li>Lens: 2.1mm (M12) FOV155° (4:3)</li>
+                    <li>Signal System: PAL / NTSC Switchable</li>
+                </ul>
+            </div>
+
+            <!-- GPS Module -->
+            <div class="component-card">
+                <img src="GPS.png" alt="Radiolink GPS">
+                <h3>Radiolink GPS with GPX</h3>
+                <ul class="specs-list">
+                    <li>Velocity Precision: 0.1m/s</li>
+                    <li>Max Height: 50000m</li>
+                    <li>Max Speed: 515m/s</li>
+                    <li>Max Acceleration: 4G</li>
+                    <li>Update Rate: 10Hz</li>
+                </ul>
+            </div>
+
+            <!-- Motors -->
+            <div class="component-card">
+                <img src="motor.png" alt="Brushless DC Motor">
+                <h3>Brushless DC CCW & CW Motor</h3>
+                <ul class="specs-list">
+                    <li>Motor KV: 920 RPM/V</li>
+                    <li>Motor Rotation: CCW</li>
+                    <li>Thrust: Around 0.5 kg</li>
+                    <li>ESC: 30 A</li>
+                    <li>Shaft Diameter: 6 mm</li>
+                </ul>
+            </div>
+
+            <!-- ESC -->
+            <div class="component-card">
+                <img src="esc.png" alt="LittleBee ESC">
+                <h3>LittleBee 30A-S OPTO ESC</h3>
+                <ul class="specs-list">
+                    <li>Battery: 6-25.2V (2-6S LiPo)</li>
+                    <li>Current Rating: 30amp / 35amp burst</li>
+                    <li>MCU: SILABS EFM8BB21F16</li>
+                    <li>Dedicated driver chip</li>
+                </ul>
+            </div>
+
+            <!-- Frame -->
+            <div class="component-card">
+                <img src="frame.png" alt="S 500 Frame">
+                <h3>S 500 Carbon Fiber Drone Frame Kit</h3>
+                <ul class="specs-list">
+                    <li>High-Quality Carbon fiber Material Frame</li>
+                    <li>Comes With Landing Gear</li>
+                    <li>Power Distribution Board Pre Installed</li>
+                </ul>
+            </div>
+
+            <!-- Battery -->
+            <div class="component-card">
+                <img src="battery.png" alt="Orange Battery">
+                <h3>Orange 2200mAh 14.8V 40C Battery</h3>
+                <ul class="specs-list">
+                    <li>Model No: ORANGE 2200/4S-40C</li>
+                    <li>Capacity: 2200 mAh</li>
+                    <li>Weight: 234 gm</li>
+                    <li>Voltage: 14.8 V</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section" id="team">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <!-- Team Leader -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="member1.jpeg" alt="Kundan Raj Singh" loading="lazy">
+                </div>
+                <h3>Kundan Raj Singh</h3>
+                <p class="role">Team Lead & Project Manager</p>
+                <p class="member-desc">Leading the project with expertise in AI, robotics, and agricultural technology integration.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">Project Management</span>
+                    <span class="skill-tag">AI/ML</span>
+                    <span class="skill-tag">Robotics</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/kundan-raj-singh-714015283" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/kundanrs" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="kundansingh.iitm@gmail.com" class="social-link email-link" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- AI & Web Developer -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="member2.jpeg" alt="Roshni Kumari" loading="lazy">
+                </div>
+                <h3>Roshni Kumari</h3>
+                <p class="role">AI Lead & Full Stack Developer</p>
+                <p class="member-desc">Leads AI model development with expertise in deep learning and computer vision. Also handles full-stack web development and UI/UX design.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Computer Vision</span>
+                    <span class="skill-tag">Full Stack</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/roshni-sah-6336bb2a7" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Roshni-Sah" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="dev.roshnisah@gmail.com" class="social-link email-link" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- AI Developer -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="member3.jpeg" alt="Priyanka Kumari" loading="lazy">
+                </div>
+                <h3>Priyanka Kumari</h3>
+                <p class="role">AI Model Developer</p>
+                <p class="member-desc">Specializes in developing and optimizing AI models for crop analysis and disease detection.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">Computer Vision</span>
+                    <span class="skill-tag">Data Analysis</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/priyanka-kumari-3861b4327" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/priyankakumari0203" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="priyanka.kumari020305@gmail.com" class="social-link email-link" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hardware Engineer -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="member4.jpeg" alt="Prashant Pathak" loading="lazy">
+                </div>
+                <h3>Prashant Pathak</h3>
+                <p class="role">Hardware Engineer</p>
+                <p class="member-desc">Leads drone hardware design and component integration for optimal performance.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">Drone Design</span>
+                    <span class="skill-tag">Hardware</span>
+                    <span class="skill-tag">Electronics</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/prashant-pathak-7ab88931b" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/prashantpathak4" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="prashant10grd@gmail.com" class="social-link email-link" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Implementation Lead -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="member5.jpeg" alt="Amrendra Kumar" loading="lazy">
+                </div>
+                <h3>Amrendra Kumar</h3>
+                <p class="role">Implementation Lead</p>
+                <p class="member-desc">Manages drone implementation and system integration. Expert in control systems and field operations.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">Drone Ops</span>
+                    <span class="skill-tag">Integration</span>
+                    <span class="skill-tag">Testing</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/amrendra-kumar-931b6831b" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Amrendrakumar10" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="kumaramrendra.300g@gmail.com" class="social-link email-link" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Systems Engineer -->
+            <div class="team-card">
+                <div class="member-image">
+                    <img src="member6.jpeg" alt="Rahul Roshan" loading="lazy">
+                </div>
+                <h3>Rahul Roshan</h3>
+                <p class="role">Systems & Hardware Engineer</p>
+                <p class="member-desc">Focuses on hardware development and drone implementation. Expert in system architecture and field testing.</p>
+                <div class="member-skills">
+                    <span class="skill-tag">Hardware</span>
+                    <span class="skill-tag">Implementation</span>
+                    <span class="skill-tag">Testing</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/rahul-roshan-rr" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/r-roshan1001" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="rahulroshan.10012005@gmail.com" class="social-link email-link" target="_blank">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo-section">
+                    <img src="logoDhruvai.png" alt="DHRUV.AI Logo" class="footer-logo">
+                    <h3>DHRUV.AI</h3>
+                </div>
+                <div class="contact-info-footer">
+                    <a href="https://wa.me/913335824532" class="info-item" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <p>+91-3335824532</p>
+                    </a>
+                    <a href="mailto:info@dhruv.xyz" class="info-item">
+                        <i class="far fa-envelope"></i>
+                        <p>info@naayi.xyz</p>
+                    </a>
+                    <a href="https://www.dhruv.ai" class="info-item" target="_blank">
+                        <i class="fas fa-globe"></i>
+                        <p>www.dhruv.in</p>
+                    </a>
+                    <a href="https://maps.google.com/?q=Agarpara,kolkata" class="info-item" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Agarpara, Kolkata (700109)</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 DHRUV.AI | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Add wave separators between sections -->
+    <div class="section-wave"></div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuBtn = document.querySelector('.menu-btn i');
+            
+            navLinks.classList.toggle('active');
+            
+            // Toggle menu icon
+            if (navLinks.classList.contains('active')) {
+                menuBtn.classList.remove('fa-bars');
+                menuBtn.classList.add('fa-times');
+            } else {
+                menuBtn.classList.remove('fa-times');
+                menuBtn.classList.add('fa-bars');
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navLinks = document.getElementById('navLinks');
+            const menuBtn = document.querySelector('.menu-btn');
+            
+            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                const menuIcon = document.querySelector('.menu-btn i');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when window is resized to desktop view
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 765) {
+                const navLinks = document.getElementById('navLinks');
+                const menuIcon = document.querySelector('.menu-btn i');
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.component-card, .team-card, .process-item');
+        fadeElements.forEach(el => {
+            el.classList.add('fade-in');
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Prevent iOS bounce scroll
+        document.body.addEventListener('touchmove', function(e) {
+            if (document.querySelector('.nav-links.active')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Optimize scroll performance
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    // Your scroll-based updates here
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Prevent body scroll when menu is open
+        function toggleBodyScroll(disable) {
+            document.body.style.overflow = disable ? 'hidden' : '';
+        }
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.remove('active');
+                toggleBodyScroll(false);
+            });
+        });
+
+        // Add touch feedback
+        document.querySelectorAll('a, button').forEach(element => {
+            element.addEventListener('touchstart', () => {}, {passive: true});
+        });
+
+        // Lazy load images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+        });
+
+        // Optimize image loading
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamImages = document.querySelectorAll('.member-image img');
+            
+            const imageOptions = {
+                threshold: 0.1,
+                rootMargin: '50px'
+            };
+
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.onload = () => {
+                                img.style.opacity = '1';
+                                img.parentElement.classList.add('loaded');
+                            };
+                            observer.unobserve(img);
+                        }
+                    }
+                });
+            }, imageOptions);
+
+            teamImages.forEach(img => {
+                // Add loading animation
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.3s ease';
+                // Start observing
+                imageObserver.observe(img);
+            });
+        });
+
+        // Optimize card rendering
+        const teamCards = document.querySelectorAll('.team-card');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '50px'
+        });
+
+        teamCards.forEach(card => cardObserver.observe(card));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const memberImages = document.querySelectorAll('.member-image img');
+            
+            memberImages.forEach(img => {
+                // Handle successful image load
+                img.addEventListener('load', () => {
+                    img.parentElement.classList.add('loaded');
+                });
+
+                // Handle image error
+                img.addEventListener('error', () => {
+                    const name = img.alt;
+                    const initials = name.split(' ')
+                        .map(word => word[0])
+                        .join('')
+                        .toUpperCase();
+                    
+                    const fallback = document.createElement('span');
+                    fallback.className = 'fallback-initials';
+                    fallback.textContent = initials;
+                    
+                    img.parentElement.appendChild(fallback);
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.innerWidth <= 768) {
+                const processGrid = document.querySelector('.process-grid');
+                const items = document.querySelectorAll('.process-item');
+                
+                // Add progress dots
+                const dotsContainer = document.createElement('div');
+                dotsContainer.className = 'progress-dots';
+                
+                items.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    if (index === 0) dot.classList.add('active');
+                    dotsContainer.appendChild(dot);
+                });
+                
+                processGrid.parentElement.appendChild(dotsContainer);
+                
+                // Update active state on scroll
+                const dots = document.querySelectorAll('.dot');
+                
+                processGrid.addEventListener('scroll', () => {
+                    const scrollPosition = processGrid.scrollLeft;
+                    const itemWidth = items[0].offsetWidth + 16;
+                    const activeIndex = Math.round(scrollPosition / itemWidth);
+                    
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === activeIndex);
+                    });
+                    
+                    items.forEach((item, index) => {
+                        item.classList.toggle('active', index === activeIndex);
+                    });
+                });
+
+                // Add smooth scrolling
+                let startX, scrollLeft;
+
+                processGrid.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].pageX - processGrid.offsetLeft;
+                    scrollLeft = processGrid.scrollLeft;
+                }, { passive: true });
+
+                processGrid.addEventListener('touchmove', (e) => {
+                    if (!startX) return;
+                    const x = e.touches[0].pageX - processGrid.offsetLeft;
+                    const walk = (x - startX);
+                    processGrid.scrollLeft = scrollLeft - walk;
+                }, { passive: true });
+
+                processGrid.addEventListener('touchend', () => {
+                    startX = null;
+                    const itemWidth = items[0].offsetWidth + 16;
+                    const targetIndex = Math.round(processGrid.scrollLeft / itemWidth);
+                    processGrid.scrollTo({
+                        left: targetIndex * itemWidth,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.vision-card');
+            const dots = document.querySelectorAll('.nav-dot');
+            let currentIndex = 0;
+
+            // Handle card visibility
+            function updateActiveCard(index) {
+                cards.forEach((card, i) => {
+                    card.style.opacity = i === index ? '1' : '0.5';
+                    card.style.transform = i === index ? 'scale(1)' : 'scale(0.95)';
+                });
+
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            // Initialize
+            updateActiveCard(0);
+
+            // Add touch handling
+            let startY;
+            let startX;
+            
+            document.addEventListener('touchstart', (e) => {
+                startY = e.touches[0].pageY;
+                startX = e.touches[0].pageX;
+            }, { passive: true });
+
+            document.addEventListener('touchmove', (e) => {
+                if (!startY || !startX) return;
+
+                const deltaY = e.touches[0].pageY - startY;
+                const deltaX = e.touches[0].pageX - startX;
+
+                // Determine if scroll is more horizontal or vertical
+                if (Math.abs(deltaX) > Math.abs(deltaY)) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+
+            document.addEventListener('touchend', (e) => {
+                const deltaY = e.changedTouches[0].pageY - startY;
+                
+                if (Math.abs(deltaY) > 50) {
+                    if (deltaY > 0 && currentIndex > 0) {
+                        currentIndex--;
+                    } else if (deltaY < 0 && currentIndex < cards.length - 1) {
+                        currentIndex++;
+                    }
+                    updateActiveCard(currentIndex);
+                }
+
+                startY = null;
+                startX = null;
+            });
+        });
+    </script>
+</body>
+</html>
+

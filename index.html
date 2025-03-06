@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DHRUV.AI - Agricultural Drone Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logoDhruvai.png" alt="DHRUV.AI Logo">
+                <div class="logo-text">
+                    <span class="dhruv">DHRUV</span><span class="ai">.AI</span>
+                </div>
+            </div>
+            
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#vision" class="nav-item">Vision</a>
+                <a href="#process" class="nav-item">Process</a>
+                <a href="#components" class="nav-item">Components</a>
+                <a href="#team" class="nav-item">Team</a>
+                <a href="#footer" class="nav-item">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Smart Farming with 
+                    <span class="highlight">AI Drones</span>
+                </h1>
+                <p class="hero-description">
+                    Transforming agriculture through precision technology. Our AI-powered drones help farmers monitor crops, analyze field health, and maximize yields efficiently.
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/drone.jpeg" alt="Agricultural Drone" class="main-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="intro-section" id="vision">
+        <div class="vision-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="vision-container">
+            <div class="vision-content">
+                <h2>Our Vision</h2>
+                <div class="vision-grid">
+                    <div class="vision-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI-Powered Innovation</h3>
+                        <p>Leveraging cutting-edge artificial intelligence to revolutionize traditional farming practices.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-helicopter"></i>
+                        <h3>Drone Technology</h3>
+                        <p>Using advanced drone systems to monitor and analyze agricultural fields with precision.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainable Agriculture</h3>
+                        <p>Promoting sustainable farming practices through smart technology integration.</p>
+                    </div>
+                </div>
+                <div class="vision-description">
+                    <p>We embark on a journey to revolutionize farming by harnessing the power of artificial intelligence and drone technology. Our AI-enabled drones capture high-quality images of agricultural fields, analyzing plant health and detecting diseases to improve crop yield and sustainability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-container">
+            <h2>Features of Our Drone</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-camera-retro"></i>
+                    <h3>High Resolution Imaging</h3>
+                    <p>4K camera with advanced stabilization for crystal clear aerial imagery</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-battery-three-quarters"></i>
+                    <h3>Long Flight Time</h3>
+                    <p>Up to 30 minutes of flight time on a single charge</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wind"></i>
+                    <h3>Wind Resistant</h3>
+                    <p>Stable flight in winds up to 25mph for reliable operation</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-satellite-dish"></i>
+                    <h3>GPS Precision</h3>
+                    <p>Accurate positioning and autonomous navigation capabilities</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Smart AI Processing</h3>
+                    <p>Real-time data analysis and crop health assessment</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Fail-Safe System</h3>
+                    <p>Multiple safety features including return-to-home function</p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="video-section">
+        <div class="video-container">
+            <h2>See Our Drone in Action</h2>
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline poster="assets/drone-video.mp4">
+                    <source src="assets/drone-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section" id="process">
+        <div class="process-container">
+            <h2>Our Process</h2>
+            <div class="workflow-container">
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="assets/images/droneProcess.png" alt="Making Drone">
+                        <span class="step-number">01</span>
+                    </div>
+                    <h3>Making Drone</h3>
+                    <p>Custom-built drones designed for agricultural monitoring</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="assets/images/Ai.png" alt="Making AI Model">
+                        <span class="step-number">02</span>
+                    </div>
+                    <h3>AI Model Development</h3>
+                    <p>Advanced algorithms for crop analysis</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="assets/images/data-collection.png" alt="Capturing Images">
+                        <span class="step-number">03</span>
+                    </div>
+                    <h3>Data Collection</h3>
+                    <p>High-resolution aerial imagery capture</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="assets/images/dataAnalasis.png" alt="Analysis">
+                        <span class="step-number">04</span>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <p>AI-powered crop health assessment</p>
+                </div>
+                <div class="workflow-item">
+                    <div class="workflow-icon">
+                        <img src="assets/images/resultt.png" alt="Results">
+                        <span class="step-number">05</span>
+                    </div>
+                    <h3>Results & Insights</h3>
+                    <p>Actionable farming recommendations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="components-section" id="components">
+        <h2>Model Components</h2>
+        <div class="components-grid">
+            <!-- Flight Controller -->
+            <div class="component-card">
+                <img src="assets/images/FlightController (2).png" alt="Radiolink Flight Controller">
+                <h3>Radiolink Flight Controller</h3>
+                <ul class="specs-list">
+                    <li>Processor: HC32F4A0PITB</li>
+                    <li>Input Voltage Range: 2-12S</li>
+                    <li>Input Current(A): 90</li>
+                    <li>Output Voltage(V): 5.1</li>
+                    <li>Output Current (A): 2.5</li>
+                    <li>PWM Outputs: 10</li>
+                </ul>
+            </div>
+
+            <!-- Remote Control -->
+            <div class="component-card">
+                <img src="assets/images/remoteController.png" alt="FS-i6S Remote Control">
+                <h3>FS-i6S Remote Control 2.4G</h3>
+                <ul class="specs-list">
+                    <li>Operating Voltage (VDC): 4.2 - 6.0</li>
+                    <li>No. of Channels: 10</li>
+                    <li>Antenna Length (mm): 26</li>
+                    <li>Certificate: CE0678, FCC</li>
+                </ul>
+            </div>
+
+            <!-- Camera -->
+            <div class="component-card">
+                <img src="assets/images/camera.png" alt="RunCam Phoenix 2">
+                <h3>RunCam Phoenix 2 Micro FPV Camera</h3>
+                <ul class="specs-list">
+                    <li>Image Sensor: 1/2" COMS Sensor</li>
+                    <li>Lens: 2.1mm (M12) FOV155° (4:3)</li>
+                    <li>Signal System: PAL / NTSC Switchable</li>
+                </ul>
+            </div>
+
+            <!-- GPS Module -->
+            <div class="component-card">
+                <img src="assets/images/GPS.png" alt="Radiolink GPS">
+                <h3>Radiolink GPS with GPX</h3>
+                <ul class="specs-list">
+                    <li>Velocity Precision: 0.1m/s</li>
+                    <li>Max Height: 50000m</li>
+                    <li>Max Speed: 515m/s</li>
+                    <li>Max Acceleration: 4G</li>
+                    <li>Update Rate: 10Hz</li>
+                </ul>
+            </div>
+
+            <!-- Motors -->
+            <div class="component-card">
+                <img src="assets/images/motor.png" alt="Brushless DC Motor">
+                <h3>Brushless DC CCW & CW Motor</h3>
+                <ul class="specs-list">
+                    <li>Motor KV: 920 RPM/V</li>
+                    <li>Motor Rotation: CCW</li>
+                    <li>Thrust: Around 0.5 kg</li>
+                    <li>ESC: 30 A</li>
+                    <li>Shaft Diameter: 6 mm</li>
+                </ul>
+            </div>
+
+            <!-- ESC -->
+            <div class="component-card">
+                <img src="assets/images/esc.png" alt="LittleBee ESC">
+                <h3>LittleBee 30A-S OPTO ESC</h3>
+                <ul class="specs-list">
+                    <li>Battery: 6-25.2V (2-6S LiPo)</li>
+                    <li>Current Rating: 30amp / 35amp burst</li>
+                    <li>MCU: SILABS EFM8BB21F16</li>
+                    <li>Dedicated driver chip</li>
+                </ul>
+            </div>
+
+            <!-- Frame -->
+            <div class="component-card">
+                <img src="assets/images/frame.png" alt="S 500 Frame">
+                <h3>S 500 Carbon Fiber Drone Frame Kit</h3>
+                <ul class="specs-list">
+                    <li>High-Quality Carbon fiber Material Frame</li>
+                    <li>Comes With Landing Gear</li>
+                    <li>Power Distribution Board Pre Installed</li>
+                </ul>
+            </div>
+
+            <!-- Battery -->
+            <div class="component-card">
+                <img src="assets/images/battery.png" alt="Orange Battery">
+                <h3>Orange 2200mAh 14.8V 40C Battery</h3>
+                <ul class="specs-list">
+                    <li>Model No: ORANGE 2200/4S-40C</li>
+                    <li>Capacity: 2200 mAh</li>
+                    <li>Weight: 234 gm</li>
+                    <li>Voltage: 14.8 V</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section" id="team">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <!-- Team members data -->
+            <script>
+                const teamMembers = [
+                    {
+                        name: "Kundan Raj Singh",
+                        role: "Team Lead & Project Manager",
+                        desc: "Leading the project with expertise in AI, robotics, and agricultural technology integration.",
+                        skills: ["Project Management", "AI/ML", "Robotics"],
+                        image: "member1.jpg",
+                        social: {
+                            linkedin: "kundan-raj-singh-714015283",
+                            github: "kundanrs",
+                            email: "kundansingh.iitm@gmail.com"
+                        }
+                    },
+                    {
+                        name: "Roshni Kumari",
+                        role: "AI Lead & Full Stack Developer",
+                        desc: "Leads AI model development with expertise in deep learning and computer vision. Also handles full-stack web development and UI/UX design.",
+                        skills: ["Deep Learning", "Computer Vision", "Full Stack"],
+                        image: "member2.jpeg",
+                        social: {
+                            linkedin: "roshni-sah-6336bb2a7",
+                            github: "Roshni-Sah",
+                            email: "dev.roshnisah@gmail.com"
+                        }
+                    },
+                    {
+                        name: "Priyanka Kumari",
+                        role: "AI Model Developer",
+                        desc: "Specializes in developing and optimizing AI models for crop analysis and disease detection.",
+                        skills: ["Deep Learning", "Computer Vision", "Data Analysis"],
+                        image: "member3.jpeg",
+                        social: {
+                            linkedin: "priyanka-kumari-3861b4327",
+                            github: "priyankakumari0203",
+                            email: "priyanka.kumari020305@gmail.com"
+                        }
+                    },
+                    {
+                        name: "Prashant Pathak",
+                        role: "Hardware Engineer",
+                        desc: "Leads drone hardware design and component integration for optimal performance.",
+                        skills: ["Drone Design", "Hardware", "Electronics"],
+                        image: "member4.jpg",
+                        social: {
+                            linkedin: "prashant-pathak-7ab88931b",
+                            github: "prashantpathak4",
+                            email: "prashant10grd@gmail.com"
+                        }
+                    },
+                    {
+                        name: "Amrendra Kumar",
+                        role: "Implementation Lead",
+                        desc: "Manages drone implementation and system integration. Expert in control systems and field operations.",
+                        skills: ["Drone Ops", "Integration", "Testing"],
+                        image: "member5.jpg",
+                        social: {
+                            linkedin: "amrendra-kumar-931b6831b",
+                            github: "Amrendrakumar10",
+                            email: "kumaramrendra.300g@gmail.com"
+                        }
+                    },
+                    {
+                        name: "Rahul Roshan",
+                        role: "Systems & Hardware Engineer",
+                        desc: "Focuses on hardware development and drone implementation. Expert in system architecture and field testing.",
+                        skills: ["Hardware", "Implementation", "Testing"],
+                        image: "member6.jpg",
+                        social: {
+                            linkedin: "rahul-roshan-rr",
+                            github: "r-roshan1001",
+                            email: "rahulroshan.10012005@gmail.com"
+                        }
+                    }
+                ];
+
+                // Generate team member cards
+                const teamGrid = document.querySelector('.team-grid');
+                teamMembers.forEach(member => {
+                    const card = document.createElement('div');
+                    card.className = 'team-card';
+                    card.innerHTML = `
+                        <div class="member-image">
+                            <img src="assets/members/${member.image}" alt="${member.name}" loading="lazy">
+                        </div>
+                        <h3>${member.name}</h3>
+                        <p class="role">${member.role}</p>
+                        <p class="member-desc">${member.desc}</p>
+                        <div class="member-skills">
+                            ${member.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/${member.social.linkedin}" class="social-link" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/${member.social.github}" class="social-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="${member.social.email}" class="social-link email-link" target="_blank">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    `;
+                    teamGrid.appendChild(card);
+                });
+            </script>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo-section">
+                    <img src="assets/images/logoDhruvai.png" alt="DHRUV.AI Logo" class="footer-logo">
+                    <h3>DHRUV.AI</h3>
+                </div>
+                <div class="contact-info-footer">
+                    <a href="https://wa.me/913335824532" class="info-item" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <p>+91-3335824532</p>
+                    </a>
+                    <a href="mailto:info@dhruv.xyz" class="info-item">
+                        <i class="far fa-envelope"></i>
+                        <p>info@naayi.xyz</p>
+                    </a>
+                    <a href="https://www.dhruv.ai" class="info-item" target="_blank">
+                        <i class="fas fa-globe"></i>
+                        <p>www.dhruv.in</p>
+                    </a>
+                    <a href="https://maps.google.com/?q=Agarpara,kolkata" class="info-item" target="_blank">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Agarpara, Kolkata (700109)</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 DHRUV.AI | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Add wave separators between sections -->
+    <div class="section-wave"></div>
+
+    <script>
+        // Utility functions
+        const $ = selector => document.querySelector(selector);
+        const $$ = selector => document.querySelectorAll(selector);
+
+        // Toggle menu functionality
+        function toggleMenu() {
+            const navLinks = $('#navLinks');
+            const menuBtn = $('.menu-btn i');
+            
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('fa-bars');
+            menuBtn.classList.toggle('fa-times');
+            
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize animations for features section
+            const featuresContainer = $('.features-container');
+            if (featuresContainer) {
+                // Add animation class after a short delay to ensure proper rendering
+                setTimeout(() => {
+                    featuresContainer.classList.add('animate');
+                    // Force a reflow
+                    void featuresContainer.offsetWidth;
+                    // Add visible class if in viewport
+                    if (isElementInViewport(featuresContainer)) {
+                        featuresContainer.classList.add('visible');
+                    }
+                }, 100);
+            }
+
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe features container for animation
+            if (featuresContainer) {
+                observer.observe(featuresContainer);
+            }
+
+            // Observe other elements for animation
+            $$('.component-card, .team-card, .process-item, .vision-card, .video-container').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Helper function to check if element is in viewport
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                const navLinks = $('#navLinks');
+                const menuBtn = $('.menu-btn');
+                
+                if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    $('.menu-btn i').className = 'fas fa-bars';
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 765) {
+                    $('#navLinks').classList.remove('active');
+                    $('.menu-btn i').className = 'fas fa-bars';
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Smooth scrolling
+            $$('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', e => {
+                    e.preventDefault();
+                    $(anchor.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+                    if ($('#navLinks').classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Image lazy loading
+            const imageObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            img.onload = () => {
+                                img.style.opacity = '1';
+                                img.parentElement.classList.add('loaded');
+                            };
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+
+            $$('img[data-src]').forEach(img => imageObserver.observe(img));
+
+            // Handle image errors
+            $$('.member-image img').forEach(img => {
+                img.addEventListener('error', () => {
+                    const initials = img.alt.split(' ')
+                        .map(word => word[0])
+                        .join('')
+                        .toUpperCase();
+                    
+                    const fallback = document.createElement('span');
+                    fallback.className = 'fallback-initials';
+                    fallback.textContent = initials;
+                    
+                    img.parentElement.appendChild(fallback);
+                });
+            });
+
+            // Mobile process section handling
+            if (window.innerWidth <= 768) {
+                const processGrid = $('.process-grid');
+                if (processGrid) {
+                    const items = $$('.process-item');
+                    const dotsContainer = document.createElement('div');
+                    dotsContainer.className = 'progress-dots';
+                    
+                    items.forEach((_, index) => {
+                        const dot = document.createElement('div');
+                        dot.className = `dot${index === 0 ? ' active' : ''}`;
+                        dotsContainer.appendChild(dot);
+                    });
+                    
+                    processGrid.parentElement.appendChild(dotsContainer);
+                    
+                    let startX, scrollLeft;
+                    
+                    processGrid.addEventListener('touchstart', e => {
+                        startX = e.touches[0].pageX - processGrid.offsetLeft;
+                        scrollLeft = processGrid.scrollLeft;
+                    }, {passive: true});
+                    
+                    processGrid.addEventListener('touchmove', e => {
+                        if (!startX) return;
+                        const x = e.touches[0].pageX - processGrid.offsetLeft;
+                        processGrid.scrollLeft = scrollLeft - (x - startX);
+                    }, {passive: true});
+                    
+                    processGrid.addEventListener('touchend', () => {
+                        startX = null;
+                        const itemWidth = items[0].offsetWidth + 16;
+                        const targetIndex = Math.round(processGrid.scrollLeft / itemWidth);
+                        processGrid.scrollTo({
+                            left: targetIndex * itemWidth,
+                            behavior: 'smooth'
+                        });
+                        
+                        $$('.dot').forEach((dot, index) => {
+                            dot.classList.toggle('active', index === targetIndex);
+                        });
+                        
+                        items.forEach((item, index) => {
+                            item.classList.toggle('active', index === targetIndex);
+                        });
+                    });
+                }
+            }
+        });
+
+        // Optimize scroll performance
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    // Scroll-based updates here
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -2096,3 +2096,429 @@ body {
         max-width: 400px;
     }
 } 
+
+.aimodel-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.aimodel-container h2 {
+    color: #2C3E50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.aimodel-container p {
+    color: #34495E;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+}
+
+/* Form styles optimized for mobile */
+.disease-input-form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 1rem;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.disease-input-form h3 {
+    color: #2C3E50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2C3E50;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: #006B5E;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 107, 94, 0.1);
+}
+
+.submit-btn {
+    background: #006B5E;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    touch-action: manipulation;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+    background: #005248;
+}
+
+/* Results section optimized for mobile */
+.treatment-results {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 1rem;
+    width: auto;
+    animation: fadeIn 0.5s ease;
+}
+
+.results-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.damage-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+}
+
+.damage-label {
+    color: #2C3E50;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.damage-value {
+    color: #e74c3c;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    background: #fff5f5;
+    border-radius: 8px;
+}
+
+.pesticide-recommendations,
+.application-timing,
+.precautions {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 2px solid #e0e0e0;
+}
+
+.pesticide-recommendations h4,
+.application-timing h4,
+.precautions h4 {
+    color: #2C3E50;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.pesticide-recommendations ul li,
+.precautions ul li {
+    color: #34495E;
+    margin-bottom: 0.6rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+/* Tablet and desktop styles */
+@media (min-width: 768px) {
+    .aimodel-container {
+        max-width: 1200px;
+        padding: 2rem;
+    }
+
+    .aimodel-container h2 {
+        font-size: 2.5rem;
+    }
+
+    .aimodel-container p {
+        font-size: 1.1rem;
+    }
+
+    .disease-input-form,
+    .treatment-results {
+        padding: 2.5rem;
+        margin: 2rem auto;
+        max-width: 800px;
+    }
+
+    .form-group select,
+    .form-group input {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .damage-info {
+        padding: 1.5rem;
+    }
+
+    .damage-label {
+        font-size: 1.2rem;
+    }
+
+    .damage-value {
+        font-size: 1.4rem;
+    }
+
+    .pesticide-recommendations h4,
+    .application-timing h4,
+    .precautions h4 {
+        font-size: 1.3rem;
+    }
+
+    .pesticide-recommendations ul li,
+    .precautions ul li {
+        font-size: 1.1rem;
+    }
+}
+
+/* Hide disease grid */
+.disease-grid {
+    display: none;
+}
+
+/* Add smooth scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improve touch targets */
+button, select, input {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Add loading state for submit button */
+.submit-btn.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Add focus styles for better accessibility */
+:focus {
+    outline: 2px solid #006B5E;
+    outline-offset: 2px;
+}
+
+/* Add active state for better touch feedback */
+.submit-btn:active,
+.form-group select:active,
+.form-group input:active {
+    transform: scale(0.98);
+}
+
+.disease-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.disease-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.disease-image {
+    height: 220px;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.disease-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.disease-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.disease-info h3 {
+    color: #2C3E50;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.damage-percentage {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.pesticide-info {
+    margin-top: 1rem;
+}
+
+.pesticide-info h4 {
+    color: #2C3E50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.pesticide-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.pesticide-info ul li {
+    color: #34495E;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.pesticide-info ul li:before {
+    content: "•";
+    color: #006B5E;
+    position: absolute;
+    left: 0;
+}
+
+.application-time {
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.application-time h4 {
+    color: #2C3E50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.application-time p {
+    color: #34495E;
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.precautions {
+    margin-top: 1rem;
+}
+
+.precautions h4 {
+    color: #2C3E50;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.precautions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.precautions ul li {
+    color: #34495E;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.precautions ul li:before {
+    content: "⚠";
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .disease-image {
+        height: 200px;
+        padding: 8px;
+    }
+
+    .disease-info {
+        padding: 1rem;
+    }
+
+    .disease-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .pesticide-info h4,
+    .application-time h4,
+    .precautions h4 {
+        font-size: 1rem;
+    }
+
+    .pesticide-info ul li,
+    .application-time p,
+    .precautions ul li {
+        font-size: 0.9rem;
+    }
+} 

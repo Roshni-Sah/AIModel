@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+@media (max-width: 768px) {
+  .intro-section {
+    padding-top: 90px !important;
+  }
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logoDhruvai.png" alt="DHRUV.AI Logo">
+                <div class="logo-text">
+                    <span class="dhruv">DHRUV</span><span class="ai">.AI</span>
+                </div>
+            </div>
+            
+            <button class="menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="home.html" class="nav-item">Home</a>
+                <a href="vision.html" class="nav-item">Vision</a>
+                <a href="aimodel.html" class="nav-item">AIModel</a>
+                <a href="process.html" class="nav-item">Process</a>
+                <a href="features.html" class="nav-item">Features</a>
+                <!-- <a href="#components" class="nav-item">Components</a> -->
+                <a href="video.html" class="nav-item">Gallery</a>
+                <!-- <a href="footer.html" class="nav-item">Contact Us</a> -->
+            </div>
+        </div>
+    </nav>
+
+    <section class="intro-section" id="vision">
+        <div class="vision-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
+        <div class="vision-container">
+            <div class="vision-content">
+                <h2 >Why Dhruv.AI</h2>
+                <div class="vision-grid">
+                    <div class="vision-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Supporting Farmers</h3>
+                        <p>Our core vision is to empower farmers with advanced tools that enhance their decision-making and improve crop health.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-helicopter"></i>
+                        <h3>AI-Enabled Drones</h3>
+                        <p>We are developing drones equipped with AI technology to analyze agricultural fields in real-time.</p>
+                    </div>
+                    <div class="vision-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Early Disease Detection</h3>
+                        <p>Our drones help farmers detect diseases early, allowing for timely intervention and reducing crop loss.</p>
+                    </div>
+                </div>
+                <div class="vision-description">
+                    <p>Our approach reduces inefficiencies and supports environmentally responsible farming, contributing to a more sustainable agricultural future. By providing accurate data, our solution helps minimize the use of harmful chemicals, promoting sustainable farming practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <div class="footer-bottom">
+            <p>© 2024 DHRUV.AI | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Utility functions
+        const $ = selector => document.querySelector(selector);
+        const $$ = selector => document.querySelectorAll(selector);
+
+        // Toggle menu functionality
+        function toggleMenu() {
+            const navLinks = $('#navLinks');
+            const menuBtn = $('.menu-btn');
+            const menuBtnIcon = $('.menu-btn i');
+            
+            // Toggle menu visibility
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('active');
+            
+            // Toggle icon between bars and times
+            if (navLinks.classList.contains('active')) {
+                menuBtnIcon.className = 'fas fa-times';
+                document.body.classList.add('menu-open');
+            } else {
+                menuBtnIcon.className = 'fas fa-bars';
+                document.body.classList.remove('menu-open');
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                const navLinks = $('#navLinks');
+                const menuBtn = $('.menu-btn');
+                
+                if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    menuBtn.classList.remove('active');
+                    $('.menu-btn i').className = 'fas fa-bars';
+                    document.body.classList.remove('menu-open');
+                }
+            });
+
+            // Close menu when clicking on a nav item
+            $$('.nav-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        const navLinks = $('#navLinks');
+                        const menuBtn = $('.menu-btn');
+                        
+                        navLinks.classList.remove('active');
+                        menuBtn.classList.remove('active');
+                        $('.menu-btn i').className = 'fas fa-bars';
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    const navLinks = $('#navLinks');
+                    const menuBtn = $('.menu-btn');
+                    
+                    navLinks.classList.remove('active');
+                    menuBtn.classList.remove('active');
+                    $('.menu-btn i').className = 'fas fa-bars';
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -19,7 +19,7 @@ function ContactPage() {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbyjG0fZ9Ojweu6u7F75sruNSqW0wn7oT-IGVXWUB7Rj9ZBIwRU7JxiM_QbVG6ytmflR/exec",
+        `https://script.google.com/macros/s/${import.meta.env.VITE_GOOGLE_SCRIPT_ID}/exec`,
         {
           method: "POST",
           body: JSON.stringify(formData)

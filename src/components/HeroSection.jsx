@@ -10,7 +10,7 @@ function HeroSection() {
       id="home" 
       ref={sectionRef}
       style={{
-        background: `linear-gradient(90deg, rgba(3, 21, 18, 0.92), rgba(3, 21, 18, 0.56) 48%, rgba(3, 21, 18, 0.88)), linear-gradient(180deg, rgba(3, 21, 18, 0.1), #031512), url(${heroBackgroundImg}) center/cover no-repeat`,
+        backgroundImage: `url(${heroBackgroundImg})`,
       }}
     >
       <div className="hero-container">

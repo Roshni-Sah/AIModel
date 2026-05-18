@@ -54,7 +54,7 @@ function ContactPage() {
         <section className="contact-grid" aria-label="Contact form and contact details">
           <div className="form-panel">
             <h2 className="section-title">Start a conversation</h2>
-            <p className="section-copy">Share a few details and the Dhruv.AI team will follow up for a pilot, demo, collaboration, or startup discussion.</p>
+            <p className="section-copy">Share a few details and the Dhruv.AI team will get back to you shortly.</p>
 
             <form id="contactForm" onSubmit={handleSubmit}>
               <div className="form-grid">

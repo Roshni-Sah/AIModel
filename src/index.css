@@ -236,12 +236,11 @@ p {
     inset: 0;
     border-radius: 0;
     opacity: 0.12;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 70px 70px;
-    -webkit-mask-image: radial-gradient(circle at 50% 38%, #000, transparent 72%);
-    mask-image: radial-gradient(circle at 50% 38%, #000, transparent 72%);
+    /* Remove subtle grid overlay to avoid visible horizontal lines */
+    background-image: none;
+    background-size: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
 }
 
 .hero-container,
@@ -2312,14 +2311,8 @@ p {
 }
 
 .hero-content::before {
-    content: '';
-    display: block;
-    width: 72px;
-    height: 3px;
-    margin-bottom: 1.25rem;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #ffe680, #00a896);
-    box-shadow: 0 0 20px rgba(0, 168, 150, 0.28);
+    /* decorative bar removed to eliminate the horizontal line above the hero heading */
+    display: none;
 }
 
 .hero-content h1 {

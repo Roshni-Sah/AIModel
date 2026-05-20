@@ -2282,15 +2282,17 @@ p {
 
 .hero-section {
     min-height: 100svh;
-    padding: 120px 0 60px;
+    padding: clamp(60px, 12vw, 120px) clamp(16px, 5%, 40px) clamp(40px, 8vw, 60px);
     display: flex;
     align-items: center;
-    background:
-        linear-gradient(90deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.34) 48%, rgba(0, 0, 0, 0.58)),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.18), rgba(3, 21, 18, 0.78)),
-        url('home1.png') center center / cover no-repeat;
+    justify-content: center;
+    background-color: var(--dark-2);
+    background: url('./assets/home1.png') center center / cover no-repeat;
+    background-attachment: fixed;
     background-position: center calc(50% + var(--hero-shift, 0px));
     transition: background-position 0.12s linear;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .hero-section::before {
@@ -2298,20 +2300,30 @@ p {
     height: clamp(14rem, 32vw, 32rem);
     right: 4%;
     top: 20%;
-    background: radial-gradient(circle, rgba(0, 168, 150, 0.18), transparent 68%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 68%);
+    filter: blur(8px);
     animation: floatMesh 14s ease-in-out infinite;
+    z-index: 1;
 }
 
 .hero-section::after {
-    opacity: 0.08;
+    inset: 0;
+    border-radius: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.42));
+    opacity: 1;
+    z-index: 0;
 }
 
 .hero-container {
-    width: min(1200px, 100%);
-    padding: 0 5%;
+    width: min(100%, 1200px);
+    max-width: 100%;
+    padding: 0 clamp(16px, 5%, 40px);
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
 }
 
 .hero-content {
@@ -2327,7 +2339,7 @@ p {
 .hero-content h1 {
     margin: 0 0 1.35rem;
     color: #ffffff;
-    font-size: clamp(2.35rem, 5.8vw, 5rem);
+    font-size: clamp(1.5rem, 3.8vw, 3.4rem);
     line-height: 1.08;
     text-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
 }
@@ -2460,22 +2472,55 @@ p {
     }
 
     .hero-section {
-        min-height: 92svh;
-        padding: 105px 0 48px;
+        min-height: 100svh;
+        padding: clamp(50px, 10vw, 80px) clamp(16px, 5%, 32px);
         text-align: center;
         background-position: center center;
+        background-attachment: scroll;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-sizing: border-box;
     }
 
     .hero-container {
         justify-content: center;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        word-break: break-word;
     }
 
     .hero-content h1 {
-        font-size: clamp(2rem, 10vw, 3rem);
+        font-size: clamp(1.5rem, 3.8vw, 3.4rem);
+        line-height: 1.1;
     }
 
-    .hero-content::before {
-        margin-left: auto;
-        margin-right: auto;
+    .hero-description {
+        max-width: 100%;
+        font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 100svh;
+        padding: clamp(40px, 8vw, 60px) clamp(12px, 4%, 24px);
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.4rem, 5.7vw, 3.7rem);
+        line-height: 1.12;
+        margin-bottom: 1rem;
+    }
+
+    .hero-description {
+        font-size: clamp(1.1rem, 3vw, 1.2rem);
+        line-height: 1.6;
     }
 }

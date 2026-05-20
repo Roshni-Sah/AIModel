@@ -1,17 +1,13 @@
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
-import heroBackgroundImg from '../assets/home1.png'
 
 function HeroSection() {
   const sectionRef = useRevealOnScroll()
 
   return (
-    <section 
-      className="hero-section" 
-      id="home" 
+    <section
+      className="hero-section"
+      id="home"
       ref={sectionRef}
-      style={{
-        backgroundImage: `url(${heroBackgroundImg})`,
-      }}
     >
       <div className="hero-container">
         <div className="hero-content reveal">

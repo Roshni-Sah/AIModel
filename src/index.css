@@ -598,15 +598,11 @@ p {
     .about-layout {
         grid-template-columns: 1fr;
         gap: 3rem;
-    }
-
-    .about-copy h2 {
-        max-width: 100%;
-    }
 
     .incubation-badge {
         max-width: 620px;
     }
+}
 }
 
 @media (max-width: 640px) {
@@ -745,7 +741,20 @@ p {
 
 /* heading */
 
-#vision .vision-header h2{margin-top:.6rem;color:#1f2d26;font-size:clamp(1.9rem,2.8vw,2.9rem);line-height:1.05;letter-spacing:-.045em;max-width:100%;margin-inline:auto;font-weight:700;white-space:nowrap;}
+#vision .vision-header h2{
+    margin-top:.6rem;
+    color:#1f2d26;
+    /* unified, smooth scaling for all viewports */
+    font-size: clamp(1.9rem, 3.4vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    max-width:100%;
+    margin-inline:auto;
+    font-weight:700;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-shadow: none;
+}
 
 /* description */
 
@@ -1006,8 +1015,7 @@ p {
     }
 
     #vision .vision-header h2{
-        font-size: clamp(2.2rem,11vw,3.8rem);
-
+        /* use base clamp for smooth scaling; avoid overriding here */
         max-width:100%;
     }
 
@@ -1225,13 +1233,16 @@ p {
 .tech-intro h2{
     margin-top:.6rem;
     color:#1f2d26;
-    font-size:clamp(1.9rem,2.8vw,2.9rem);
-    line-height:1.05;
-    letter-spacing:-.045em;
+    /* unified, smooth scaling to match Vision heading */
+    font-size: clamp(1.9rem, 3.4vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
     max-width:100%;
     margin-inline:auto;
     font-weight:700;
-    white-space:nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-shadow: none;
 }
 
 .tech-badge{
@@ -1533,9 +1544,7 @@ p {
         min-height:auto;
     }
 
-    .tech-intro h2{
-        font-size:clamp(2rem,8vw,3rem);
-    }
+    /* keep heading scaling controlled by base clamp; avoid abrupt changes here */
 }
 
 

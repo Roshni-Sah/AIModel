@@ -79,7 +79,6 @@ function JourneySection() {
 
           <div
             className="journey-modern-slides"
-            style={{ transform: `translateX(-${current * 100}%)` }}
           >
             {slides.map((s, i) => (
               <article
@@ -102,18 +101,18 @@ function JourneySection() {
                     <h3 className="journey-modern-title">{s.title}</h3>
                     <p className="journey-modern-desc">{s.desc}</p>
                   </div>
-
-                  <div className="journey-modern-controls" aria-label="Journey controls">
-                    <button className="journey-nav-btn prev" aria-label="Previous slide" onClick={() => showSlide(current - 1)}>
-                      <i className="fas fa-arrow-left" aria-hidden="true" />
-                    </button>
-                    <button className="journey-nav-btn next" aria-label="Next slide" onClick={() => showSlide(current + 1)}>
-                      <i className="fas fa-arrow-right" aria-hidden="true" />
-                    </button>
-                  </div>
                 </div>
               </article>
             ))}
+          </div>
+
+          <div className="journey-modern-controls" aria-label="Journey controls">
+            <button className="journey-nav-btn prev" aria-label="Previous slide" onClick={() => showSlide(current - 1)}>
+              <i className="fas fa-arrow-left" aria-hidden="true" />
+            </button>
+            <button className="journey-nav-btn next" aria-label="Next slide" onClick={() => showSlide(current + 1)}>
+              <i className="fas fa-arrow-right" aria-hidden="true" />
+            </button>
           </div>
         </div>
 

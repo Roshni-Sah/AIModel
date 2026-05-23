@@ -16,6 +16,7 @@ function Navbar() {
     { href: '#process', label: 'Process' },
     { href: '#technology', label: 'Technology' },
     { href: '#journey', label: 'Journey' },
+    { href: '#team', label: 'Team' },
   ]
 
   const closeMenu = useCallback(() => {

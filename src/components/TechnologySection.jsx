@@ -1,38 +1,24 @@
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
+import patentImg from '../assets/patent.jpeg'
 
 const panels = [
   {
+    number: '01',
     icon: 'fas fa-camera-retro',
     title: 'Computer Vision AI',
-    desc: 'Crop imagery is processed through vision models designed to identify health patterns, disease cues, and field-level anomalies.',
-    className: 'tech-panel tech-panel-hero',
-    hasSignal: true,
+    desc: 'Crop images are scanned by AI to detect diseases, unhealthy plants, and unusual field conditions at an early stage.',
   },
   {
+    number: '02',
     icon: 'fas fa-helicopter',
     title: 'Autonomous Drone Systems',
-    desc: 'Flight hardware captures farm data and supports precision spraying with repeatable mission logic.',
-    className: 'tech-panel',
+    desc: 'Self-built drones autonomously scan fields, collect agricultural data, and execute precision spraying missions with high accuracy and efficiency.',
   },
   {
+    number: '03',
     icon: 'fas fa-satellite-dish',
-    title: 'Smart Imaging & Sensors',
-    desc: 'Camera and sensor inputs create a reliable view of crop condition and measurable field intelligence.',
-    className: 'tech-panel tech-panel-tall',
-    hasSensors: true,
-  },
-  {
-    icon: 'fas fa-microchip',
     title: 'Real-Time Data Intelligence',
-    desc: 'Collected data becomes practical recommendations for faster, more confident farm decisions.',
-    className: 'tech-panel',
-  },
-  {
-    icon: 'fas fa-layer-group',
-    title: 'Precision Mapping & Agricultural Analytics',
-    desc: 'Disease zones, spraying targets, and monitoring insights are organized into a decision layer farmers can act on immediately.',
-    className: 'tech-panel tech-panel-wide',
-    hasMapPulse: true,
+    desc: 'Integrated cameras and field sensors continuously monitor crop conditions, helping detect stress indicators and environmental changes in real time.',
   },
 ]
 
@@ -51,38 +37,39 @@ function TechnologySection() {
           <span className="tech-badge">Technology stack</span>
           <h2 id="techHeading">The intelligence layer behind Dhruv.AI.</h2>
           <p>
-            A connected AI, drone, sensor, and analytics ecosystem built for precision farming at
-            field scale.
+            A connected AI, drone, sensor, and analytics ecosystem built for precision farming at field scale.
           </p>
         </div>
 
         <div className="tech-bento">
           {panels.map((panel, i) => (
-            <article className={`${panel.className} reveal`} key={i}>
-              <div className="tech-panel-icon">
-                <i className={panel.icon} aria-hidden="true" />
+            <article className="tech-panel reveal" key={i}>
+              <div className="tech-panel-top">
+                <span className="tech-panel-number">{panel.number}</span>
+                <span className="tech-panel-icon">
+                  <i className={panel.icon} aria-hidden="true" />
+                </span>
               </div>
               <h3>{panel.title}</h3>
               <p>{panel.desc}</p>
-              {panel.hasSignal && (
-                <div className="tech-signal" aria-hidden="true">
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                </div>
-              )}
-              {panel.hasSensors && (
-                <div className="sensor-stack" aria-hidden="true">
-                  <span>RGB</span>
-                  <span>Field scan</span>
-                  <span>Crop stress</span>
-                </div>
-              )}
-              {panel.hasMapPulse && <div className="map-pulse" aria-hidden="true" />}
             </article>
           ))}
         </div>
+
+        <article className="tech-patent reveal">
+          <div className="tech-patent-copy">
+            <span className="tech-patent-badge">Patent filed innovation</span>
+            <h3>Built for the Future of Farming.</h3>
+            <p>
+              The patent filing reflects Dhruv.AI's technical direction: detecting crop disease
+              with AI, using drones for field-level action, and enabling precision spraying through
+              an integrated agriculture workflow.
+            </p>
+          </div>
+          <figure className="tech-patent-media">
+            <img src={patentImg} alt="Dhruv.AI patent filing document" />
+          </figure>
+        </article>
       </div>
     </section>
   )

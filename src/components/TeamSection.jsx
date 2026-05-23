@@ -7,8 +7,8 @@ const members = [
     role: 'Founder & CEO',
     bio: 'Leads Dhruv.AI\'s product vision, AI strategy, and drone system development, bringing together crop intelligence, autonomous flight, and precision spraying into one practical platform.',
     focus: ['AI strategy', 'Drone systems', 'Product vision'],
-    email: 'hello@dhruvai.com',
-    linkedin: '#',
+    email: 'kundanrajsingh398@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/kundan-raj-singh-714015283/',
   },
   {
     initials: 'RK',
@@ -16,10 +16,19 @@ const members = [
     role: 'Co-Founder & CTO',
     bio: 'Drives Dhruv.AI\'s technical execution across AI models, drone architecture, and intelligent automation, turning field data into reliable crop-health insights.',
     focus: ['AI models', 'Drone architecture', 'Automation'],
-    email: 'contact@dhruvai.com',
-    linkedin: '#',
+    email: 'roshnikujuu@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/roshni-sah-6336bb2a7/',
   },
 ]
+
+const getMailLink = (member) => {
+  const subject = encodeURIComponent(`Dhruv.AI inquiry for ${member.name}`)
+  const body = encodeURIComponent(
+    `Hi ${member.name},\n\nI would like to connect with you regarding Dhruv.AI.\n\n`
+  )
+
+  return `https://mail.google.com/mail/?view=cm&fs=1&to=${member.email}&su=${subject}&body=${body}`
+}
 
 function TeamSection() {
   const sectionRef = useRevealOnScroll()
@@ -44,10 +53,20 @@ function TeamSection() {
                   <span>{member.initials}</span>
                 </div>
                 <div className="team-socials" aria-label={`${member.name} links`}>
-                  <a href={`mailto:${member.email}`} aria-label={`Email ${member.name}`}>
+                  <a
+                    href={getMailLink(member)}
+                    aria-label={`Email ${member.name}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fas fa-envelope" aria-hidden="true" />
                   </a>
-                  <a href={member.linkedin} aria-label={`${member.name} LinkedIn`}>
+                  <a
+                    href={member.linkedin}
+                    aria-label={`${member.name} LinkedIn`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <i className="fab fa-linkedin-in" aria-hidden="true" />
                   </a>
                 </div>

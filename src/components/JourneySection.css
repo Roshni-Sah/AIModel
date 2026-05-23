@@ -1,0 +1,437 @@
+/* JourneySection.css */
+
+.journey-modern-section {
+  position: relative;
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  background: linear-gradient(180deg, #02110e 0%, #06231e 100%);
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  z-index: 1;
+}
+
+/* Background animated glows */
+.journey-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: -1;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.glow-1 {
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 800px;
+  background: radial-gradient(circle, rgba(0, 168, 150, 0.15), transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation: floatGlow 15s ease-in-out infinite alternate;
+}
+
+.glow-2 {
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  background: radial-gradient(circle, rgba(255, 230, 128, 0.1), transparent 70%);
+  bottom: -10%;
+  right: -5%;
+  animation: floatGlow 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(40px, 40px) scale(1.05);
+  }
+}
+
+.journey-modern-shell {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading Typography */
+.journey-modern-heading {
+  max-width: 840px;
+  margin: 0 auto clamp(2.5rem, 4vw, 4rem);
+  text-align: center;
+}
+
+.journey-modern-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  background: rgba(0, 168, 150, 0.08);
+  border: 1px solid rgba(0, 168, 150, 0.25);
+  color: #9ff2d3;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 12px rgba(0, 168, 150, 0.1);
+}
+
+.journey-modern-h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.journey-modern-p {
+  font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(226, 255, 244, 0.75);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Carousel Container */
+.journey-modern-carousel {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.journey-modern-carousel:hover {
+  border-color: rgba(0, 168, 150, 0.25);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 50px rgba(0, 168, 150, 0.08);
+}
+
+/* Progress Bar */
+.journey-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.04);
+  z-index: 10;
+}
+
+.journey-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffe680, #00a896);
+  box-shadow: 0 0 12px rgba(0, 168, 150, 0.6);
+  transition: width 0.1s linear;
+}
+
+/* Slide Area */
+.journey-modern-slides {
+  position: relative;
+  width: 100%;
+  height: 640px;
+}
+
+@media (max-width: 980px) {
+  .journey-modern-slides {
+    aspect-ratio: unset;
+    height: 580px;
+  }
+}
+
+.journey-modern-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+
+  /* Fade states */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 0.8s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.journey-modern-slide.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+@media (max-width: 980px) {
+  .journey-modern-slide {
+    grid-template-columns: 1fr;
+    grid-template-rows: 180px 1fr;
+  }
+}
+
+/* Image Wrapper */
+.journey-modern-media {
+  margin: 0;
+  padding: 1.75rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+  min-height: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 980px) {
+  .journey-modern-media {
+    padding: 0.75rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    aspect-ratio: unset;
+  }
+}
+
+.journey-image-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.journey-modern-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center;
+}
+
+.journey-modern-slide.active .journey-modern-media img {
+  animation: slowCinematicZoom 20s ease-out forwards;
+}
+
+@keyframes slowCinematicZoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+/* Content Area */
+.journey-modern-content {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.02), transparent 80%);
+  position: relative;
+  min-height: 0;
+}
+
+@media (max-width: 980px) {
+  .journey-modern-content {
+    padding: 1.25rem 1.25rem 4.5rem 1.25rem;
+  }
+}
+
+.journey-modern-content-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.journey-modern-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.journey-modern-tag {
+  color: #ffe680;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 6px;
+  background: rgba(255, 230, 128, 0.12);
+  border: 1px solid rgba(255, 230, 128, 0.25);
+  box-shadow: 0 4px 10px rgba(255, 230, 128, 0.05);
+}
+
+.journey-modern-date {
+  color: rgba(226, 255, 244, 0.55);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.journey-modern-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #ffffff;
+  font-size: clamp(1.3rem, 2.5vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+}
+
+.journey-modern-desc {
+  color: rgba(226, 255, 244, 0.85);
+  font-size: clamp(0.92rem, 1vw, 1.05rem);
+  line-height: 1.8;
+  margin: 0;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+@media (max-width: 980px) {
+  .journey-modern-desc {
+    max-height: 8.5em;
+    font-size: 0.9rem;
+    /* Clean limit to 5 lines of text with a scrollbar if needed */
+  }
+}
+
+/* Elegant Custom Scrollbar for Text Area */
+.journey-modern-desc::-webkit-scrollbar {
+  width: 4px;
+}
+
+.journey-modern-desc::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.journey-modern-desc::-webkit-scrollbar-thumb {
+  background: rgba(0, 168, 150, 0.5);
+  border-radius: 4px;
+}
+
+.journey-modern-desc::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 168, 150, 0.8);
+}
+
+/* Navigation Buttons inside Carousel */
+.journey-modern-controls {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 3.5rem;
+  display: flex;
+  gap: 0.8rem;
+  z-index: 10;
+}
+
+@media (max-width: 980px) {
+  .journey-modern-controls {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .journey-nav-btn {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.journey-nav-btn {
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
+}
+
+.journey-nav-btn:hover {
+  background: rgba(0, 168, 150, 0.25);
+  border-color: rgba(0, 168, 150, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 168, 150, 0.25);
+  color: #ffe680;
+}
+
+.journey-nav-btn:active {
+  transform: translateY(0);
+}
+
+/* Bottom Progress Dots */
+.journey-modern-bottom-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.journey-dots {
+  display: flex;
+  gap: 0.85rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.journey-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.journey-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+.journey-dot.active {
+  width: 28px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ffe680, #00a896);
+  box-shadow: 0 0 12px rgba(0, 168, 150, 0.5);
+}
+
+/* Reveal Animation overriding defaults just for this section to ensure smoothness */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

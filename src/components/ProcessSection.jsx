@@ -29,7 +29,7 @@ const steps = [
     index: '05',
     icon: 'fas fa-chart-line',
     title: 'Real-Time Agricultural Insights',
-    desc: 'Farmers receive clear data intelligence for faster decisions, monitoring, and future crop planning.',
+    desc: 'Farmers access real-time insights through an intelligent dashboard for smarter decisions and better crop planning.',
   },
 ]
 

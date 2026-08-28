@@ -107,7 +107,7 @@ function ContactPage() {
               <div className="quick-card">
                 <i className="fas fa-location-dot" />
                 <h3>Office</h3>
-                <p>iCreate Campus, Devdholera, Opp. Kensville Golf Club, Rajkot-Bavla Highway, Ahmedabad, Gujarat – 382240 , India .</p>
+                <p>iCreate Campus, Devdholera, Opp. Kensville Golf Club, Rajkot-Bavla Highway, Ahmedabad, Gujarat – 382240 , India</p>
               </div>
               <div className="quick-card">
                 <i className="fas fa-seedling" />

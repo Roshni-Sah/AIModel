@@ -1,4 +1,4 @@
-import logoImg from '../assets/12.png'
+import logoImg from '../assets/dhruvLogo.png'
 
 function Footer() {
   const handleScrollTo = (e, href) => {
@@ -19,7 +19,7 @@ function Footer() {
           <p className="footer-tagline">AI-powered drones for precision farming, early disease detection, and sustainable crop protection.</p>
           <div className="footer-socials">
             <a href="https://www.linkedin.com/company/dhruv-ai/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin-in" /></a>
-            <a href="https://www.instagram.com/dhruv.ai_official?igsh=NTA2dGg5a2VjMmJ1" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram" /></a>
+            <a href="https://www.instagram.com/_dhruv.ai_?igsi=MTQwM291eGc2NGI2OQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram" /></a>
             <a href="https://x.com/dhruv_ai_" target="_blank" rel="noopener noreferrer" aria-label="X"><i className="fab fa-twitter" /></a>
           </div>
         </div>

@@ -1,21 +1,25 @@
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll'
+import kundanPic from '../assets/kundan.jpeg'
+import roshniPic from '../assets/Roshni.jpeg'
 
 const members = [
   {
     initials: 'KS',
+    image: kundanPic,
     name: 'Kundan Raj Singh',
     role: 'Founder & CEO',
-    bio: 'Leads Dhruv.AI\'s product vision, AI strategy, and drone system development, bringing together crop intelligence, autonomous flight, and precision spraying into one practical platform.',
-    focus: ['AI strategy', 'Drone systems', 'Product vision'],
+    bio: 'Designs the disease-detection pipeline and leads execution across Dhruv.AI development.',
+    focus: ['Detection pipeline', 'Disease AI', 'Execution'],
     email: 'kundanrajsingh398@gmail.com',
     linkedin: 'https://www.linkedin.com/in/kundan-raj-singh-714015283/',
   },
   {
     initials: 'RK',
+    image: roshniPic,
     name: 'Roshni Kumari',
     role: 'Co-Founder & CTO',
-    bio: 'Drives Dhruv.AI\'s technical execution across AI models, drone architecture, and intelligent automation, turning field data into reliable crop-health insights.',
-    focus: ['AI models', 'Drone architecture', 'Automation'],
+    bio: 'Works on datasets, sensors, ROS, and model integration for drone systems.',
+    focus: ['Datasets', 'Sensors & ROS', 'Integration'],
     email: 'roshnikujuu@gmail.com',
     linkedin: 'https://www.linkedin.com/in/roshni-sah-6336bb2a7/',
   },
@@ -40,8 +44,7 @@ function TeamSection() {
           <span className="team-badge">Our team</span>
           <h2 id="teamHeading">The minds building Dhruv.AI for smarter farming.</h2>
           <p>
-            A founder-led team combining artificial intelligence, drone technology, and field
-            insight to build practical precision agriculture systems for Indian farms.
+            A founder-led team building practical AI drone systems for precision agriculture.
           </p>
         </div>
 
@@ -50,7 +53,7 @@ function TeamSection() {
             <article className="team-card reveal" key={member.name}>
               <div className="team-card-top">
                 <div className="team-avatar" aria-hidden="true">
-                  <span>{member.initials}</span>
+                  <img src={member.image} alt="" />
                 </div>
                 <div className="team-socials" aria-label={`${member.name} links`}>
                   <a

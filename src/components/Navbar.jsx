@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import logoImg from '../assets/12.png'
+import logoImg from '../assets/dhruvLogo.png'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)

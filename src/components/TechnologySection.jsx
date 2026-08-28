@@ -58,12 +58,12 @@ function TechnologySection() {
 
         <article className="tech-patent reveal">
           <div className="tech-patent-copy">
-            <span className="tech-patent-badge">Patent filed innovation</span>
-            <h3>Built for the Future of Farming.</h3>
+            <span className="tech-patent-badge">Patent-Filed Innovation</span>
+            <h3>Built for the Future of Precision Farming.</h3>
             <p>
-              The patent filing reflects Dhruv.AI's technical direction: detecting crop disease
-              with AI, using drones for field-level action, and enabling precision spraying through
-              an integrated agriculture workflow.
+              Dhruv.AI's patent filing represents an integrated approach to crop disease
+              detection, drone-enabled field operations, and precision spraying, bringing AI-driven
+              decision-making into a practical agriculture workflow.
             </p>
           </div>
           <figure className="tech-patent-media">

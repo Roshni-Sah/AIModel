@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logoImg from '../assets/12.png'
+import logoImg from '../assets/dhruvLogo.png'
 import './ContactPage.css'
 
 function ContactPage() {
@@ -118,7 +118,7 @@ function ContactPage() {
                 <h3>Social</h3>
                 <div className="social-row">
                   <a href="https://www.linkedin.com/company/dhruv-ai/posts/?feedView=all" aria-label="LinkedIn"><i className="fab fa-linkedin-in" /></a>
-                  <a href="https://www.instagram.com/dhruv.ai_official?igsh=NTA2dGg5a2VjMmJ1" aria-label="Instagram"><i className="fab fa-instagram" /></a>
+                  <a href="https://www.instagram.com/_dhruv.ai_?igsi=MTQwM291eGc2NGI2OQ==" aria-label="Instagram"><i className="fab fa-instagram" /></a>
                   <a href="https://x.com/dhruv_ai_" aria-label="X"><i className="fab fa-twitter" /></a>
                 </div>
               </div>
